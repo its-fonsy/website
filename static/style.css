@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+
+:root {
+    --fg: #101010;
+    --bg: #FFF;
+    --accent: #000085; 
+    --accent-hl: #0000FF;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: var(--bg);
+    margin: 0;
+}
+
+article, nav {
+    margin: auto;
+    max-width: 670px;
+}
+
+article {
+    hyphens: auto;
+    color: var(--fg);
+    font-size: 0.95rem;
+}
+
+/* Headings */
+
+h1 {
+    margin-top: 2rem;
+    font-size: 2.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.3rem;
+    margin-top: 1.5rem;
+}
+
+/* Paragraph */
+
+p+p {
+    margin: 0.8rem 0;
+}
+
+p {
+    margin: 0;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+h2+p, h3+p, h4+p, h5+p, h6+p {
+    margin-top: 0;
+}
+
+/* Hyperlinks */
+
+a {
+    color: var(--fg);
+    text-decoration: none;
+}
+
+p > a {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Lists */
+
+ul, ol {
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+}
+
+li {
+    line-height: 1.8;
+}
+
+li ol, li ul {
+    margin: 0;
+}
+
+/* Images */
+
+img {
+    box-shadow: 0 0 0.9rem var(--fg);
+    display: block;
+    width: 90%;
+    margin: 25px auto;
+}
+
+/* Code CSS */
+
+code, tt {
+    font-family: "Red Hat Mono",monospace;
+    font-size: 0.85rem;
+}
+
+pre code {
+    padding: 1em;
+    overflow-x: auto;
+    display: block;
+}
+
+p code {
+    font-weight: 500;
+    padding: 0 0.1rem;
+}
+
+/* Table */
+
+table {
+    display: block;
+    margin: 25px auto;
+    width: 95%;
+    border-collapse: collapse;
+    overflow: auto;
+}
+
+th {
+    border-bottom: solid 1px var(--fg);
+    font-weight: 500;
+}
+
+td, th {
+    padding: 7px 12px;
+}
+
+/* Blockquotes */
+
+blockquote p {
+    font-size: 1.08rem;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Header */
+
+nav {
+    border-radius: 0.15rem;
+    background: #1E3A8A;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+nav li {
+    line-height: 2;
+    margin: 0 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+nav li:first-child a {
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+
+nav li:first-child a:hover {
+    text-decoration: none;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+}
+
+/* Footer */
+
+footer {
+    margin: 50px auto;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Tablets */
+
+@media screen and (max-width: 900px) {
+    body {
+        max-width: 530px;
+    }
+}
+
+/* Smartphone Tweaks */
+@media screen and (max-width: 450px) {
+
+    article {
+        width: 84%;
+        margin: auto;
+    }
+
+    nav {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 1.5rem;
+        border-radius: 0;
+    }
+
+    p {
+        font-size: 0.89rem;
+    }
+
+    nav ul {
+        margin: 0;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    blockquote p {
+        font-size: 0.96rem;
+    }
+
+    img {
+        width: 97%;
+    }
+    blockquote {
+        margin: 10px 0;
+        margin-left: 15px;
+    }
+
+    pre code{
+        font-size: 0.85rem;
+        margin: 0;
+    }
+
+    ul, ol {
+        padding-left: 32px;
+        margin: 0;
+    }
+}
