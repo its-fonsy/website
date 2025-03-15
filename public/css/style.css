@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+
+:root {
+    --fg: #101010;
+    --fg2: #888;
+    --bg: #FFF;
+    --accent1: #103e7a; 
+    --accent2: #4d85c8;
+    --main-font: "Montserrat", sans-serif;
+    --mono-font: "Red Hat Mono", monospace;
+}
+
+body {
+    font-family: var(--main-font);
+    background: var(--bg);
+    margin: 0;
+}
+
+main, nav, footer {
+    margin: auto;
+    max-width: 650px;
+}
+
+main {
+    hyphens: auto;
+    color: var(--fg);
+    font-size: 1rem;
+}
+
+/* Headings */
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.05rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    font-variant-caps: small-caps;
+}
+
+h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+    letter-spacing: -0.02rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
+h3, h4, h5, h6 {
+    font-size: 1.1rem;
+}
+
+/* Paragraph */
+
+.highlight + p, pre + p {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    margin-top: 0.8rem;
+    line-height: 1.56;
+    text-align: left;
+}
+
+h2+p, h3+p, h4+p, h5+p, h6+p {
+    margin-top: 0;
+}
+
+time {
+    font-family: var(--main-font);
+    font-size: 0.95rem;
+    color: var(--fg2);
+}
+
+.post-list time {
+    font-family: var(--mono-font);
+}
+
+.post-date {
+    margin: 0;
+    margin-bottom: 2rem;
+    display: block;
+    /* font-family: var(--mono-font); */
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+/* Hyperlinks */
+
+a {
+    color: var(--fg);
+    text-decoration: none;
+}
+
+p > a {
+    color: var(--accent2);
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Lists */
+
+ul, ol {
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+}
+
+li {
+    line-height: 1.8;
+}
+
+li::marker {
+    color: var(--fg2);
+}
+
+li ol, li ul {
+    margin: 0;
+}
+
+/* Post list */
+
+.post-list-dash {
+    margin: 0 0.25rem;
+}
+
+.post-list a {
+    margin: 0.8rem 0;
+    display: block;
+}
+
+/* Box */
+
+.box {
+    border: solid var(--fg) 1px;
+    position: relative;
+    display: block;
+    margin: 2rem 1rem;
+    padding: 0.5rem;
+}
+
+.box-title {
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    background: var(--bg);
+    padding: 0.35rem 0.5rem;
+    font-weight: 800;
+    font-variant-caps: small-caps;
+}
+
+.box-content {
+    margin: 0.8rem;
+}
+
+/* Images */
+
+img {
+    box-shadow: 0 0 0.9rem var(--fg);
+    display: block;
+    width: 90%;
+    margin: 25px auto;
+}
+
+/* Code */
+
+pre {
+    padding: 1rem;
+    margin: 0.8rem 0;
+    overflow-x: auto;
+}
+
+code {
+    font-family: var(--mono-font);
+    font-size: 0.9rem;
+}
+
+p code {
+    font-weight: 400;
+    padding: 0 0.1rem;
+}
+
+/* Table */
+
+table {
+    display: block;
+    margin: 25px auto;
+    width: 95%;
+    border-collapse: collapse;
+    overflow: auto;
+}
+
+th {
+    border-bottom: solid 1px var(--fg);
+    font-weight: 500;
+}
+
+td, th {
+    padding: 7px 12px;
+}
+
+/* Blockquotes */
+
+blockquote {
+    font-size: 0.85rem;
+    margin: 1rem;
+    border-left : solid var(--accent1) 5px;
+    padding: 0.5rem;
+    background: #F3F3F3;
+}
+
+blockquote p {
+    margin: 0;
+}
+
+/* Header */
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 2rem 0;
+    border-bottom: solid var(--fg) 1px;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+nav li:first-child a {
+    font-size: 1.7rem;
+}
+
+nav li:first-child a, nav li:last-child a {
+    padding: 0 0.5rem;
+}
+
+nav li:first-child a:hover {
+    text-decoration: none;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--fg);
+    padding: 0 1.5rem;
+}
+
+footer p {
+    margin: 100px auto;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* Notes card */
+
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 2rem 0;
+}
+
+.card-list > a {
+    width: 40%;
+    margin: 0.7rem 1rem;
+    border: 2px solid black;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-radius: 0.6rem;
+}
+
+.card-list > a:nth-child(even) {
+    margin-left: auto;
+}
+
+.card-list a:hover {
+    text-decoration: none;
+}
+
+/* Details */
+
+details {
+    margin: 1rem 0;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+details > summary, details > :not(summary){
+    padding: 0.2rem 0.5rem;
+}
+
+details > summary {
+    background: var(--accent1);
+    color: var(--bg);
+    font-weight: 500;
+}
+
+details > :not(summary){
+    border-top: 1px solid black;
+    margin: 0;
+}
+
+/* Tablets */
+
+@media screen and (max-width: 900px) {
+    body {
+        max-width: 530px;
+    }
+}
+
+/* Smartphone Tweaks */
+@media screen and (max-width: 450px) {
+
+    main {
+        width: 88%;
+        margin: auto;
+        font-size: 0.9rem;
+    }
+
+    nav ul {
+        width: 100%;
+        margin: 0 0 2rem 0;
+    }
+
+    nav li:first-child a, nav li:last-child a {
+        padding: 0 1rem;
+    }
+
+    .box {
+        margin: 2rem 0.5rem;
+    }
+
+    .post-list {
+        margin: 0.8rem 0.25rem;
+    }
+
+    .post-list a {
+        margin: 1rem 0;
+    }
+
+    .post-list time {
+        font-size: 0.85rem;
+    }
+
+    .post-list-dash {
+        visibility: hidden;
+        margin: 0;
+    }
+
+    .post-list, .post-list-title {
+        display: block;
+    }
+
+    pre {
+        padding: 1.8rem 0.5rem;
+    }
+
+    pre, code, .highlight {
+        font-size: 0.85rem;
+    }
+
+    pre {
+        padding: 1rem 0;
+        margin: 0.8rem 0;
+    }
+
+    h1 {
+        line-height: 0.9;
+        margin-bottom: 0.5rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    img {
+        width: 97%;
+    }
+
+    blockquote {
+        margin: 1rem 0.25rem;
+    }
+
+    .card-list > a {
+        font-size: 0.96rem;
+        margin: 0.3rem;
+        width: 43%;
+    }
+
+    ul, ol {
+        padding-left: 32px;
+        margin: 0;
+    }
+}

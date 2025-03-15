@@ -1,0 +1,13 @@
+{{ partial "header.html" . }}
+
+<h1>{{ .Title }}</h1>
+
+{{ .Content }}
+
+<div class="card-list">
+    {{ range.Data.Pages }}
+    <a href="{{ .RelPermalink }}" style="background: linear-gradient(15deg, {{ .Params.bg1 }} 10%, {{ .Params.bg2 }} 90%); color:{{ .Params.color }};"> {{ .Title }} </a>
+    {{ end }}
+</div>
+
+{{ partial "footer.html" . }}

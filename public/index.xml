@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fonsy</title>
+    <link>https://itsfonsy.netlify.app/</link>
+    <description>Recent content on Fonsy</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 11 Mar 2025 08:27:59 +0700</lastBuildDate>
+    <atom:link href="https://itsfonsy.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Complete markdown Test post</title>
+      <link>https://itsfonsy.netlify.app/blog/markdown-test-post/</link>
+      <pubDate>Tue, 11 Mar 2025 08:27:59 +0700</pubDate>
+      <guid>https://itsfonsy.netlify.app/blog/markdown-test-post/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus eget&#xA;nisl a condimentum. Ut porta, turpis quis ullamcorper volutpat, massa metus&#xA;molestie ante, non eleifend quam est non justo. Lorem ipsum dolor sit amet,&#xA;consectetur adipiscing elit. Sed vehicula aliquet hendrerit. Mauris ultricies&#xA;arcu eu felis lobortis, eu fermentum elit ultricies. Aliquam eu purus magna.&#xA;Duis vestibulum mi vel enim dictum, sed scelerisque dolor congue. Suspendisse&#xA;nec euismod lectus. Nulla bibendum consequat justo et commodo. Nam nec nisi&#xA;nunc. Nullam velit velit, aliquam vel nunc id, vestibulum pellentesque felis.&#xA;Nullam porttitor justo blandit, vestibulum sapien quis, ultrices leo. Mauris&#xA;rutrum maximus ex, eget ullamcorper nisl aliquam eu. Vivamus interdum ex id&#xA;molestie pharetra. Vestibulum imperdiet lacus lorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The DMA inside the Gameboy</title>
+      <link>https://itsfonsy.netlify.app/blog/gb-dma/</link>
+      <pubDate>Tue, 07 Jan 2025 17:27:59 +0700</pubDate>
+      <guid>https://itsfonsy.netlify.app/blog/gb-dma/</guid>
+      <description>&lt;p&gt;This article will explain how to use the DMA of the Gameboy DMG in assembly&#xA;language. Of course it will assume familiarity with the language itself.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-use-the-dma&#34;&gt;Why use the DMA?&lt;/h2&gt;&#xA;&lt;p&gt;The job of the DMA is to move data from one section of the memory to another.&#xA;The DMA of the Gameboy is design to move 160 bytes in 160 machine cycles.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;But the CPU has instruction to do the same thing, why use the DMA?&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nineth post</title>
+      <link>https://itsfonsy.netlify.app/blog/9/</link>
+      <pubDate>Sun, 22 Sep 2024 17:27:59 +0700</pubDate>
+      <guid>https://itsfonsy.netlify.app/blog/9/</guid>
+      <description>&lt;p&gt;test&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Eight post</title>
+      <link>https://itsfonsy.netlify.app/blog/8/</link>
+      <pubDate>Thu, 15 Aug 2024 17:27:59 +0700</pubDate>
+      <guid>https://itsfonsy.netlify.app/blog/8/</guid>
+      <description>&lt;p&gt;test&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Seventh post</title>
+      <link>https://itsfonsy.netlify.app/blog/7/</link>
+      <pubDate>Fri, 21 Jul 2023 17:27:59 +0700</pubDate>
+      <guid>https://itsfonsy.netlify.app/blog/7/</guid>
+      <description>&lt;p&gt;test&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sixth post</title>
+      <link>https://itsfonsy.netlify.app/blog/6/</link>
+      <pubDate>Sat, 18 Jun 2022 17:27:59 +0700</pubDate>
+      <guid>https://itsfonsy.netlify.app/blog/6/</guid>
+      <description>&lt;p&gt;test&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fifth post</title>
+      <link>https://itsfonsy.netlify.app/blog/5/</link>
+      <pubDate>Sun, 22 May 2022 17:27:59 +0700</pubDate>
+      <guid>https://itsfonsy.netlify.app/blog/5/</guid>
+      <description>&lt;p&gt;Test&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fourth post</title>
+      <link>https://itsfonsy.netlify.app/blog/4/</link>
+      <pubDate>Sun, 11 Apr 2021 17:27:59 +0700</pubDate>
+      <guid>https://itsfonsy.netlify.app/blog/4/</guid>
+      <description>&lt;p&gt;This is my &lt;em&gt;fourth&lt;/em&gt; post on the web.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Third post</title>
+      <link>https://itsfonsy.netlify.app/blog/3/</link>
+      <pubDate>Thu, 11 Mar 2021 17:27:59 +0700</pubDate>
+      <guid>https://itsfonsy.netlify.app/blog/3/</guid>
+      <description>&lt;p&gt;This is my &lt;em&gt;third&lt;/em&gt; post on the web.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Second post</title>
+      <link>https://itsfonsy.netlify.app/blog/2/</link>
+      <pubDate>Mon, 15 Feb 2021 17:27:59 +0700</pubDate>
+      <guid>https://itsfonsy.netlify.app/blog/2/</guid>
+      <description>&lt;p&gt;Here&amp;rsquo;s an example blog post.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>First Post</title>
+      <link>https://itsfonsy.netlify.app/blog/1/</link>
+      <pubDate>Wed, 01 Jan 2020 17:27:59 +0700</pubDate>
+      <guid>https://itsfonsy.netlify.app/blog/1/</guid>
+      <description>&lt;p&gt;Here&amp;rsquo;s an example blog post.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>https://itsfonsy.netlify.app/notes/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://itsfonsy.netlify.app/notes/git/</guid>
+      <description>&lt;p&gt;These are some notes about &lt;em&gt;Git&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>https://itsfonsy.netlify.app/notes/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://itsfonsy.netlify.app/notes/linux/</guid>
+      <description>&lt;p&gt;These are some notes about &lt;em&gt;Linux&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ssh</title>
+      <link>https://itsfonsy.netlify.app/notes/ssh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://itsfonsy.netlify.app/notes/ssh/</guid>
+      <description>&lt;p&gt;These are some notes about VHDL&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SystemVerilog</title>
+      <link>https://itsfonsy.netlify.app/notes/systemverilog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://itsfonsy.netlify.app/notes/systemverilog/</guid>
+      <description>&lt;p&gt;These are some notes about &lt;em&gt;SystemVerilog&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VHDL</title>
+      <link>https://itsfonsy.netlify.app/notes/vhdl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://itsfonsy.netlify.app/notes/vhdl/</guid>
+      <description>&lt;p&gt;These are some notes about VHDL&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+{{ partial "header.html" . }}
+
+{{ .Content }}
+
+<div class="box">
+    <div class="box-title">LAST POSTS</div>
+    <div class="box-content">
+        <div class="post-list">
+            {{ range where .Pages.ByPublishDate.Reverse "Section" "blog"}}
+                {{ range first 5 .Pages }}
+                        <a href="{{ .Permalink }}">
+                            <time>{{ .Date.Format "2006-01-02" }}</time>
+                            <span class="post-list-dash">&ndash;</span>
+                            <span class="post-list-title">{{ .Title }}</span>
+                        </a>
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+{{ partial "footer.html" . }}
