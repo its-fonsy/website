@@ -4,10 +4,15 @@
 
 {{ .Content }}
 
-<div class="card-list">
-    {{ range.Data.Pages }}
-    <a href="{{ .RelPermalink }}" style="background: linear-gradient(15deg, {{ .Params.bg1 }} 10%, {{ .Params.bg2 }} 90%); color:{{ .Params.color }};"> {{ .Title }} </a>
-    {{ end }}
+{{ range $term, $tax := .Site.Taxonomies.notes }}
+<div class="box">
+    <div class="box-title">{{ $term }}</div>
+    <div class="box-content">
+        {{ range $tax }}
+            <a href="{{ .Page.RelPermalink }}" class="note-link">{{ .Title }}</a>
+        {{end}}
+    </div>
 </div>
+{{ end }}
 
 {{ partial "footer.html" . }}

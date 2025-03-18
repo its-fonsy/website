@@ -86,38 +86,38 @@
       <description>&lt;p&gt;Here&amp;rsquo;s an example blog post.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Git</title>
-      <link>https://itsfonsy.netlify.app/notes/git/</link>
+      <title>Advanced C</title>
+      <link>https://itsfonsy.netlify.app/notes/c/advanced_c/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://itsfonsy.netlify.app/notes/git/</guid>
+      <guid>https://itsfonsy.netlify.app/notes/c/advanced_c/</guid>
       <description>&lt;p&gt;These are some notes about &lt;em&gt;Git&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Linux</title>
-      <link>https://itsfonsy.netlify.app/notes/linux/</link>
+      <title>Git</title>
+      <link>https://itsfonsy.netlify.app/notes/linux/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://itsfonsy.netlify.app/notes/linux/</guid>
-      <description>&lt;p&gt;These are some notes about &lt;em&gt;Linux&lt;/em&gt;.&lt;/p&gt;</description>
+      <guid>https://itsfonsy.netlify.app/notes/linux/git/</guid>
+      <description>&lt;p&gt;These are some notes about &lt;em&gt;Git&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>ssh</title>
-      <link>https://itsfonsy.netlify.app/notes/ssh/</link>
+      <link>https://itsfonsy.netlify.app/notes/linux/ssh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://itsfonsy.netlify.app/notes/ssh/</guid>
-      <description>&lt;p&gt;These are some notes about VHDL&lt;/p&gt;</description>
+      <guid>https://itsfonsy.netlify.app/notes/linux/ssh/</guid>
+      <description>&lt;p&gt;These are some notes about &lt;em&gt;ssh&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>SystemVerilog</title>
-      <link>https://itsfonsy.netlify.app/notes/systemverilog/</link>
+      <link>https://itsfonsy.netlify.app/notes/hdl/systemverilog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://itsfonsy.netlify.app/notes/systemverilog/</guid>
+      <guid>https://itsfonsy.netlify.app/notes/hdl/systemverilog/</guid>
       <description>&lt;p&gt;These are some notes about &lt;em&gt;SystemVerilog&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>VHDL</title>
-      <link>https://itsfonsy.netlify.app/notes/vhdl/</link>
+      <link>https://itsfonsy.netlify.app/notes/hdl/vhdl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://itsfonsy.netlify.app/notes/vhdl/</guid>
+      <guid>https://itsfonsy.netlify.app/notes/hdl/vhdl/</guid>
       <description>&lt;p&gt;These are some notes about VHDL&lt;/p&gt;</description>
     </item>
   </channel>

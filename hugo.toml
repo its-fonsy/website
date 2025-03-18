@@ -2,6 +2,9 @@ baseURL = "https://itsfonsy.netlify.app/"
 title = "Fonsy"
 theme = "fns"
 
+[taxonomies]
+    note = "notes"
+
 [menu]
 
     [[menu.main]]

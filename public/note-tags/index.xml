@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Notes on Fonsy</title>
-    <link>https://itsfonsy.netlify.app/notes/</link>
-    <description>Recent content in Notes on Fonsy</description>
+    <title>Note Tags on Fonsy</title>
+    <link>http://localhost:1313/note-tags/</link>
+    <description>Recent content in Note Tags on Fonsy</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://itsfonsy.netlify.app/notes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/note-tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C</title>
-      <link>https://itsfonsy.netlify.app/notes/c/</link>
+      <link>http://localhost:1313/note-tags/c/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://itsfonsy.netlify.app/notes/c/</guid>
+      <guid>http://localhost:1313/note-tags/c/</guid>
       <description></description>
     </item>
     <item>
       <title>HDL</title>
-      <link>https://itsfonsy.netlify.app/notes/hdl/</link>
+      <link>http://localhost:1313/note-tags/hdl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://itsfonsy.netlify.app/notes/hdl/</guid>
+      <guid>http://localhost:1313/note-tags/hdl/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>https://itsfonsy.netlify.app/notes/linux/</link>
+      <link>http://localhost:1313/note-tags/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://itsfonsy.netlify.app/notes/linux/</guid>
+      <guid>http://localhost:1313/note-tags/linux/</guid>
       <description></description>
     </item>
   </channel>

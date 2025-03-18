@@ -139,7 +139,7 @@ li ol, li ul {
 
 /* Box */
 
-.box {
+.box, .box-note {
     border: solid var(--fg) 1px;
     position: relative;
     display: block;
@@ -150,15 +150,21 @@ li ol, li ul {
 .box-title {
     position: absolute;
     top: -1rem;
-    left: 1rem;
+    left: 1.5rem;
     background: var(--bg);
     padding: 0.35rem 0.5rem;
     font-weight: 800;
     font-variant-caps: small-caps;
+    text-transform: uppercase;
 }
 
 .box-content {
     margin: 0.8rem;
+}
+
+.note-link {
+    display: inline-block;
+    margin: 0.5rem 1rem;
 }
 
 /* Images */

@@ -41,20 +41,22 @@
     <loc>https://itsfonsy.netlify.app/blog/1/</loc>
     <lastmod>2020-01-01T17:27:59+07:00</lastmod>
   </url><url>
-    <loc>https://itsfonsy.netlify.app/categories/</loc>
+    <loc>https://itsfonsy.netlify.app/notes/c/advanced_c/</loc>
   </url><url>
-    <loc>https://itsfonsy.netlify.app/notes/git/</loc>
+    <loc>https://itsfonsy.netlify.app/notes/c/</loc>
+  </url><url>
+    <loc>https://itsfonsy.netlify.app/notes/linux/git/</loc>
+  </url><url>
+    <loc>https://itsfonsy.netlify.app/notes/hdl/</loc>
   </url><url>
     <loc>https://itsfonsy.netlify.app/notes/linux/</loc>
   </url><url>
     <loc>https://itsfonsy.netlify.app/notes/</loc>
   </url><url>
-    <loc>https://itsfonsy.netlify.app/notes/ssh/</loc>
+    <loc>https://itsfonsy.netlify.app/notes/linux/ssh/</loc>
   </url><url>
-    <loc>https://itsfonsy.netlify.app/notes/systemverilog/</loc>
+    <loc>https://itsfonsy.netlify.app/notes/hdl/systemverilog/</loc>
   </url><url>
-    <loc>https://itsfonsy.netlify.app/tags/</loc>
-  </url><url>
-    <loc>https://itsfonsy.netlify.app/notes/vhdl/</loc>
+    <loc>https://itsfonsy.netlify.app/notes/hdl/vhdl/</loc>
   </url>
 </urlset>
