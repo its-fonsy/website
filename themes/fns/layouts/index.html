@@ -3,7 +3,7 @@
 {{ .Content }}
 
 <div class="box">
-    <div class="box-title">LAST POSTS</div>
+    <div class="box-title">LAST BLOG POSTS</div>
     <div class="box-content">
         <div class="post-list">
             {{ range where .Pages.ByPublishDate.Reverse "Section" "blog"}}
