@@ -8,14 +8,15 @@
 	<title>VHDL | Fonsy</title>
 
 	<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css" media="all" />
 
 	</head>
 
 <body>
 
 <nav>
-    <ul class="main-menu">
-        <li><a href="https://itsfonsy.netlify.app/">Fonsy</a></li>
+    <div class="nav-title"><a href="https://itsfonsy.netlify.app/">Fonsy's Lab</a></div>
+    <ul>
         
         <li><a href="/blog">Blog</a></li>
         
@@ -30,7 +31,178 @@
 
 <h1>VHDL</h1>
 
-<p>These are some notes about VHDL</p>
+<h2 id="code-snippets">Code snippets</h2>
+
+<details>
+  <summary>Entity with FSM</summary>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vhdl" data-lang="vhdl"><span class="line"><span class="cl"><span class="k">library</span> <span class="nn">ieee</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nn">ieee.std_logic_1164.</span><span class="k">all</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nn">ieee.numeric_std.</span><span class="k">all</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">entity</span> <span class="nc">ENTITY_NAME</span> <span class="k">is</span>
+</span></span><span class="line"><span class="cl">    <span class="k">port</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">             <span class="n">clk</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">             <span class="n">rstn</span>  <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span>
+</span></span><span class="line"><span class="cl">         <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span> <span class="k">entity</span> <span class="nc">ENTITY_NAME</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">architecture</span> <span class="nc">RTL</span> <span class="k">of</span> <span class="nc">ENTITY_NAME</span> <span class="k">is</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- FSM states type definition</span>
+</span></span><span class="line"><span class="cl">    <span class="k">type</span> <span class="n">fsm_state</span> <span class="k">is</span> <span class="p">(</span><span class="n">FSM_INIT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- Constants definition</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- Signals</span>
+</span></span><span class="line"><span class="cl">    <span class="k">signal</span> <span class="n">cs</span><span class="p">,</span> <span class="n">ns</span> <span class="o">:</span> <span class="n">fsm_state</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">begin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- FSM state register</span>
+</span></span><span class="line"><span class="cl">    <span class="nc">fsm_reg</span><span class="o">:</span> <span class="k">process</span><span class="p">(</span><span class="n">clk</span><span class="p">)</span> <span class="k">is</span>
+</span></span><span class="line"><span class="cl">    <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">rising_edge</span><span class="p">(</span><span class="n">clk</span><span class="p">)</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">rstn</span> <span class="o">=</span> <span class="sc">&#39;0&#39;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">                <span class="n">cs</span> <span class="o">&lt;=</span> <span class="n">FSM_INIT</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="n">cs</span> <span class="o">&lt;=</span> <span class="n">ns</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">end</span> <span class="k">if</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">end</span> <span class="k">if</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span> <span class="k">process</span> <span class="nc">fsm_reg</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- FSM datapath</span>
+</span></span><span class="line"><span class="cl">    <span class="nc">fsm_datapath</span><span class="o">:</span> <span class="k">process</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span> <span class="k">is</span>
+</span></span><span class="line"><span class="cl">    <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">-- Default signals values</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">-- State switch case</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="n">cs</span> <span class="k">is</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">when</span> <span class="n">FSM_INIT</span> <span class="o">=&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ns</span> <span class="o">&lt;=</span> <span class="n">FSM_INIT</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">when</span> <span class="k">others</span> <span class="o">=&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ns</span> <span class="o">&lt;=</span> <span class="n">FSM_INIT</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">end</span> <span class="k">case</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span> <span class="k">process</span> <span class="nc">fsm_datapath</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span> <span class="k">architecture</span> <span class="nc">RTL</span><span class="p">;</span>
+</span></span></code></pre></div></details>
+
+
+<details>
+  <summary>Testbench</summary>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vhdl" data-lang="vhdl"><span class="line"><span class="cl"><span class="k">library</span> <span class="nn">ieee</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nn">ieee.std_logic_1164.</span><span class="k">all</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nn">ieee.numeric_std.</span><span class="k">all</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nn">std.env.finish</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- Empty entity for testbench</span>
+</span></span><span class="line"><span class="cl"><span class="k">entity</span> <span class="nc">TESTBENCH</span> <span class="k">is</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span> <span class="nc">TESTBENCH</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">architecture</span> <span class="nc">behav</span> <span class="k">of</span> <span class="nc">TESTBENCH</span> <span class="k">is</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- Constants definition</span>
+</span></span><span class="line"><span class="cl">    <span class="k">constant</span> <span class="n">clock_frequency</span>  <span class="o">:</span> <span class="kt">integer</span> <span class="o">:=</span> <span class="mi">100</span><span class="n">e6</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">constant</span> <span class="n">clock_period</span>     <span class="o">:</span> <span class="kt">time</span> <span class="o">:=</span> <span class="mi">1000</span> <span class="n">ms</span> <span class="o">/</span> <span class="n">clock_frequency</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- Component definition</span>
+</span></span><span class="line"><span class="cl">    <span class="k">component</span> <span class="nc">ENTITY_TO_TEST</span> <span class="k">is</span>
+</span></span><span class="line"><span class="cl">        <span class="k">port</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">clk</span> <span class="o">:</span> <span class="k">in</span> <span class="kt">std_logic</span>
+</span></span><span class="line"><span class="cl">            <span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span> <span class="k">component</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- Signals definitions</span>
+</span></span><span class="line"><span class="cl">    <span class="k">signal</span> <span class="n">clk</span>         <span class="o">:</span> <span class="kt">std_logic</span> <span class="o">:=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">signal</span> <span class="n">rstn</span>        <span class="o">:</span> <span class="kt">std_logic</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">begin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">dut</span><span class="o">:</span> <span class="n">ENTITY_TO_TEST</span> <span class="k">port</span> <span class="k">map</span><span class="p">(</span><span class="n">clk</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- Clock process</span>
+</span></span><span class="line"><span class="cl">    <span class="n">clk</span> <span class="o">&lt;=</span> <span class="k">not</span> <span class="n">clk</span> <span class="k">after</span> <span class="n">clock_period</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- Main simulation process</span>
+</span></span><span class="line"><span class="cl">    <span class="nc">stimuli</span><span class="o">:</span> <span class="k">process</span> <span class="k">is</span>
+</span></span><span class="line"><span class="cl">    <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">-- Initialize the signals</span>
+</span></span><span class="line"><span class="cl">        <span class="n">rstn</span> <span class="o">&lt;=</span> <span class="sc">&#39;1&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">wait</span> <span class="k">until</span> <span class="n">falling_edge</span><span class="p">(</span><span class="n">clk</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">-- Reset the system</span>
+</span></span><span class="line"><span class="cl">        <span class="n">rstn</span> <span class="o">&lt;=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">wait</span> <span class="k">until</span> <span class="n">falling_edge</span><span class="p">(</span><span class="n">clk</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">rstn</span> <span class="o">&lt;=</span> <span class="sc">&#39;1&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">report</span> <span class="s">&#34;Test finished&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">finish</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">end</span> <span class="k">process</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span> <span class="nc">behav</span><span class="p">;</span>
+</span></span></code></pre></div></details>
+
+
+<details>
+  <summary>Array of <code>std_logic_vector</code></summary>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vhdl" data-lang="vhdl"><span class="line"><span class="cl"><span class="k">type</span> <span class="n">array_t</span> <span class="k">is</span> <span class="k">array</span> <span class="p">(</span><span class="mi">0</span> <span class="k">to</span> <span class="mi">7</span><span class="p">)</span> <span class="k">of</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">4</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">constant</span> <span class="n">data</span> <span class="o">:</span> <span class="n">array_t</span> <span class="o">:=</span> <span class="p">(</span><span class="s">&#34;00110&#34;</span><span class="p">,</span> <span class="s">&#34;00000&#34;</span><span class="p">,</span> <span class="s">&#34;01010&#34;</span><span class="p">,</span> <span class="s">&#34;11111&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                            <span class="s">&#34;00000&#34;</span><span class="p">,</span> <span class="s">&#34;11100&#34;</span><span class="p">,</span> <span class="s">&#34;10001&#34;</span><span class="p">,</span> <span class="s">&#34;01100&#34;</span><span class="p">);</span>
+</span></span></code></pre></div></details>
+
+
+<details>
+  <summary>Procedure</summary>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vhdl" data-lang="vhdl"><span class="line"><span class="cl"><span class="k">procedure</span> <span class="n">procedure_name</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">signal</span> <span class="n">a</span>    <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">signal</span> <span class="n">b</span>    <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">signal</span> <span class="n">clk</span>  <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">)</span> <span class="k">is</span>
+</span></span><span class="line"><span class="cl"><span class="k">begin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span> <span class="k">procedure</span> <span class="nc">procedure_name</span><span class="p">;</span>
+</span></span></code></pre></div></details>
+
+
+<details>
+  <summary>Generate random numbers</summary>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vhdl" data-lang="vhdl"><span class="line"><span class="cl"><span class="k">library</span> <span class="nn">ieee</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nn">ieee.std_logic_1164.</span><span class="k">all</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nn">ieee.numeric_std.</span><span class="k">all</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nn">ieee.math_real.uniform</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nn">ieee.math_real.floor</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- Variable definitions</span>
+</span></span><span class="line"><span class="cl"><span class="k">variable</span> <span class="n">seed1</span>  <span class="o">:</span> <span class="kt">positive</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">variable</span> <span class="n">seed2</span>  <span class="o">:</span> <span class="kt">positive</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">variable</span> <span class="n">x</span>      <span class="o">:</span> <span class="n">real</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">variable</span> <span class="n">y</span>      <span class="o">:</span> <span class="kt">integer</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- Procedures</span>
+</span></span><span class="line"><span class="cl"><span class="k">procedure</span> <span class="n">random_data</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">signal</span> <span class="n">clk</span>      <span class="o">:</span> <span class="k">in</span>    <span class="kt">std_logic</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">signal</span> <span class="n">data_in</span>  <span class="o">:</span> <span class="k">out</span>   <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">7</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">)</span> <span class="k">is</span>
+</span></span><span class="line"><span class="cl"><span class="k">begin</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">n</span> <span class="k">in</span> <span class="mi">1</span> <span class="k">to</span> <span class="mi">10</span> <span class="k">loop</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">-- Generate random value</span>
+</span></span><span class="line"><span class="cl">        <span class="n">uniform</span><span class="p">(</span><span class="n">seed1</span><span class="p">,</span> <span class="n">seed2</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">y</span> <span class="o">:=</span> <span class="kt">integer</span><span class="p">(</span><span class="n">floor</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">256</span><span class="p">.</span><span class="mi">0</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">-- Input random value</span>
+</span></span><span class="line"><span class="cl">        <span class="n">data_in</span> <span class="o">&lt;=</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="n">to_unsigned</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">8</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="k">wait</span> <span class="k">until</span> <span class="n">falling_edge</span><span class="p">(</span><span class="n">clk</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span> <span class="k">loop</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span> <span class="k">procedure</span> <span class="nc">push_random_data</span><span class="p">;</span>
+</span></span></code></pre></div></details>
+
 
 
 </main>

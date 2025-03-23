@@ -1,6 +1,6 @@
 <nav>
-    <ul class="main-menu">
-        <li><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></li>
+    <div class="nav-title"><a href="{{ .Site.BaseURL }}">Fonsy's Lab</a></div>
+    <ul>
         {{ range.Site.Menus.main }}
         <li><a href="{{ .URL }}">{{ .Name }}</a></li>
         {{ end }}
